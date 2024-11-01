@@ -39,11 +39,17 @@ const BlurBackground = () => {
         <div className="bg-white p-6 rounded-lg shadow-lg w-80">
           <h2 className="text-xl font-semibold mb-4">Counter</h2>
           <p className="text-gray-700 flex items-center justify-between space-x-4">
-            <button className=" px-4 py-2 bg-blue-500 text-white rounded" onMouseDown = {startDecrement}
+            <button 
+            onTouchStart={startDecrement}
+            onTouchEnd={stopDecrement}
+            className=" px-4 py-2 bg-blue-500 text-white rounded" onMouseDown = {startDecrement}
             onMouseUp = {stopDecrement}
             onMouseLeave = {stopDecrement} >-</button>
             <span className="text-gray-700 " > {count} </span>
-            <button className="px-4 py-2 bg-blue-500 text-white rounded" onMouseDown={startIncrement}
+            <button
+             onTouchStart={startIncrement}
+             onTouchEnd={stopIncrement}
+            className="px-4 py-2 bg-blue-500 text-white rounded" onMouseDown={startIncrement}
         onMouseUp={stopIncrement}
         onMouseLeave={stopIncrement} >+</button>
           </p>
